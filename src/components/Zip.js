@@ -40,7 +40,7 @@ function Zip(props) {
                 </div>
             </div>
             <div className="pl-3 row">
-                <div className="text-danger small"> { validationError }</div>
+                <div className="text-danger small"> Testing 123 { validationError }</div>
             </div>
         </div>
     );
