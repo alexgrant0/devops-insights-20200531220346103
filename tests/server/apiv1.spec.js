@@ -79,22 +79,22 @@ describe('Get Weather', function() {
         city: "Auckland"
       }
     };
-	/*
+    
     const body = {
       cod: 200,
-      name: 'Auckland',
-      weather: [
+      name: 'Auckland'
+      /*weather: [
         {
           main: 'light rain'
         }
       ],
       main: {
         temp: 15.48
-      }
+      }*/
     };
-	*/
+	
     const request = function( obj, callback ){
-      callback(null, null, null);
+      callback(null, null, body);
     };
 
     apiv1.__set__("request", request);
