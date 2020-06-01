@@ -38,7 +38,7 @@ describe('Get Weather', function() {
   it('with valid city name and error from request call', function() {
     reqMock = {
       query: {
-        city: "Hamilton"
+        city: 'Hamilton'
       }
     };
 
@@ -76,7 +76,7 @@ describe('Get Weather', function() {
   it('with valid city name', function() {
     reqMock = {
       query: {
-        city: "Auckland"
+        city: 'Auckland'
       }
     };
     /*
