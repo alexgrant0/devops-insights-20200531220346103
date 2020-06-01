@@ -86,7 +86,7 @@ describe('Get Weather', function() {
     };
 	
     const request = function( obj, callback ){
-      callback(null, null, null);
+      callback(null, null, body);
     };
 
     apiv1.__set__("request", request);
