@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH0nDKBFWMPyMxcj8JxtOSgGK6S1YApoc&callback=initMap" async defer></script>
-
 function Zip(props) {
 
     const [validationError, setValidationError] = useState(null);
@@ -44,17 +42,16 @@ function Zip(props) {
             <div className="pl-3 row">
                 <div className="text-danger small">{ validationError }</div>
             </div>
-            <div>
+            <div id="map"></div>
             	<script>
-	            	var map;
 			     	function initMap() {
-			    		map = new google.maps.Map(document.getElementById('map'), {
+			    		 var map = new google.maps.Map(document.getElementById('map'), {
 			          		center: {lat: -34.397, lng: 150.644},
 			          		zoom: 8
 			     		})
 			      	}
 			    </script>
-            </div>
+			    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH0nDKBFWMPyMxcj8JxtOSgGK6S1YApoc&callback=initMap" async defer></script>
         </div>
     );
 }
