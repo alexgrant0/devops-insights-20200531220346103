@@ -43,6 +43,8 @@ function Zip(props) {
                 <div className="text-danger small">{ validationError }</div>
             </div>
             
+            <div id="map"></div>
+            
 			            // Create the script tag, set the appropriate attributes
 			var script = document.createElement('script');
 			script.src = 'https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap';
@@ -57,7 +59,7 @@ function Zip(props) {
 			// Append the 'script' element to 'head'
 			document.head.appendChild(script);
 			
-			<div id="map"></div>
+			
 			map = new google.maps.Map(document.getElementById('map'), {
 			  center: {lat: -34.397, lng: 150.644},
 			  zoom: 8
