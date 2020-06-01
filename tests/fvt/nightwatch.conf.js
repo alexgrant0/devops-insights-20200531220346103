@@ -15,10 +15,7 @@ module.exports = {
   webdriver : {
     "start_process": true,
     "server_path": "node_modules/.bin/chromedriver",
-    port: 8080,
-    cli_args: [
-    	'--port=8080'
-    ]
+    port: 9515
   },
 
   live_output: true,
@@ -63,7 +60,6 @@ module.exports = {
       chrome: {
         desiredCapabilities: {
           browserName: 'chrome',
-          platform: 'macOS 10.13',
           version: '65.0',
           chromedriverVersion: '2.36'
         }
