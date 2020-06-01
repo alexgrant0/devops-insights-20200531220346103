@@ -102,7 +102,7 @@ describe('Get Weather', function() {
     apiv1.getWeather(reqMock, resMock);
 
     assert(resMock.status.lastCall.calledWith(200), 'Unexpected response:' + resMock.status.lastCall.args);
-    assert(resMock.send.lastCall.args[0].city === 'Wellington', 'Unexpected response:' + resMock.send.lastCall.args[0].city);
+    assert(resMock.send.lastCall.args[0].city === 'Auckland', 'Unexpected response:' + resMock.send.lastCall.args[0].city);
     assert(resMock.send.lastCall.args[0].weather === 'Conditions are light rain and temperature is 15.48 F', 'Unexpected response:' + resMock.send.lastCall.args[0].weather);
   });
 });
