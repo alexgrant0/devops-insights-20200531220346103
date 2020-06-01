@@ -54,7 +54,7 @@ function Zip(props) {
 			    <style type="text/css">
 			      /* Always set the map height explicitly to define the size of the div
 			       * element that contains the map. */
-			      #map {
+			      map {
 			        height: 100%;
 			      }
 			
