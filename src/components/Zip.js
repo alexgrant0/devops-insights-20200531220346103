@@ -43,36 +43,25 @@ function Zip(props) {
                 <div className="text-danger small">{ validationError }</div>
             </div>
             
-            <html>
-			  <head>
-			    <title>Simple Map</title>
-			    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-			    <script
-			      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbZSDbWTExhP6Ojrqi08miAFk4Bh_51C0&callback=initMap&libraries=&v=weekly"
-			      defer
-			    ></script>
-			    <script>
-			      (function(exports) {
-			        "use strict";
+			            // Create the script tag, set the appropriate attributes
+			var script = document.createElement('script');
+			script.src = 'https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap';
+			script.defer = true;
+			script.async = true;
 			
-			        function initMap() {
-			          exports.map = new google.maps.Map(document.getElementById("map"), {
-			            center: {
-			              lat: -34.397,
-			              lng: 150.644
-			            },
-			            zoom: 8
-			          });
-			        }
+			// Attach your callback function to the `window` object
+			window.initMap = function() {
+			  // JS API is loaded and available
+			};
 			
-			        exports.initMap = initMap;
-			      })((this.window = this.window || {}));
-			    </script>
-			  </head>
-			  <body>
-			    <div id="map"></div>
-			  </body>
-			</html>
+			// Append the 'script' element to 'head'
+			document.head.appendChild(script);
+			
+			<div id="map"></div>
+			map = new google.maps.Map(document.getElementById('map'), {
+			  center: {lat: -34.397, lng: 150.644},
+			  zoom: 8
+			});
             
         </div>
     );
