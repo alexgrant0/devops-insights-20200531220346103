@@ -79,18 +79,18 @@ describe('Get Weather', function() {
         city: "Auckland"
       }
     };
-    
+    /*
     const body = {
       cod: 200,
       name: 'Auckland'
-      /*weather: [
+      weather: [
         {
           main: 'light rain'
         }
       ],
       main: {
         temp: 15.48
-      }*/
+      }
     };
 	
     const request = function( obj, callback ){
@@ -98,7 +98,7 @@ describe('Get Weather', function() {
     };
 
     apiv1.__set__("request", request);
-
+	*/
     apiv1.getWeather(reqMock, resMock);
 
     assert(resMock.status.lastCall.calledWith(200), 'Unexpected response:' + resMock.status.lastCall.args);
