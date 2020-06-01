@@ -15,7 +15,7 @@ module.exports = {
   webdriver : {
     "start_process": true,
     "server_path": "node_modules/.bin/chromedriver",
-    "port": 9515
+    "port": 8080
   },
 
   live_output: true,
