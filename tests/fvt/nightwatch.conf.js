@@ -14,7 +14,11 @@ module.exports = {
 
   webdriver : {
     "start_process": true,
-    "server_path": "node_modules/.bin/chromedriver"
+    "server_path": "node_modules/.bin/chromedriver",
+    port: 8080,
+    cli_args: [
+    	'--port=8080'
+    ]
   },
 
   live_output: true,
