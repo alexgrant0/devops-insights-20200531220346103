@@ -85,11 +85,11 @@ describe('Get Weather', function() {
       name: 'Auckland'
     };
 	
-    /*const request = function( obj, callback ){
-      callback(null, null, body);
-    };*/
+    const request = function( obj, callback ){
+      callback(null, null, null);
+    };
 
-    //apiv1.__set__("request", request);
+    apiv1.__set__("request", request);
 	
     apiv1.getWeather(reqMock, resMock);
     
