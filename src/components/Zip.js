@@ -17,8 +17,6 @@ function Zip(props) {
     };
 
     return (
-    	<script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
-		<link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
         <div className="col-sm-4">
             <div className="row">
                 <div className="col-sm-10">
@@ -44,14 +42,53 @@ function Zip(props) {
             <div className="pl-3 row">
                 <div className="text-danger small">{ validationError }</div>
             </div>
-            <div id='map' style='width: 400px; height: 300px;'></div>
-			<script>
-			mapboxgl.accessToken = 'pk.eyJ1IjoiYWxleGdyYW50MCIsImEiOiJja2F4MXZwZHowMmVpMzFzNjF2azY2NzlhIn0.5LeuR7bfeCpTPt3zOnkBGQ';
-			var map = new mapboxgl.Map({
-			container: 'map',
-			style: 'mapbox://styles/mapbox/streets-v11'
-			});
-			</script>
+            
+            <html>
+			  <head>
+			    <title>Simple Map</title>
+			    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+			    <script
+			      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbZSDbWTExhP6Ojrqi08miAFk4Bh_51C0&callback=initMap&libraries=&v=weekly"
+			      defer
+			    ></script>
+			    <style type="text/css">
+			      /* Always set the map height explicitly to define the size of the div
+			       * element that contains the map. */
+			      #map {
+			        height: 100%;
+			      }
+			
+			      /* Optional: Makes the sample page fill the window. */
+			      html,
+			      body {
+			        height: 100%;
+			        margin: 0;
+			        padding: 0;
+			      }
+			    </style>
+			    <script>
+			      (function(exports) {
+			        "use strict";
+			
+			        function initMap() {
+			          exports.map = new google.maps.Map(document.getElementById("map"), {
+			            center: {
+			              lat: -34.397,
+			              lng: 150.644
+			            },
+			            zoom: 8
+			          });
+			        }
+			
+			        exports.initMap = initMap;
+			      })((this.window = this.window || {}));
+			    </script>
+			  </head>
+			  <body>
+			    <div id="map"></div>
+			  </body>
+			</html>
+            
         </div>
     );
 }
