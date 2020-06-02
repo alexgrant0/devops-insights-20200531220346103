@@ -44,6 +44,7 @@ function Zip(props) {
 	                <div className="text-danger small">{ validationError }</div>
 	            </div>
 	        </div>
+	        /*
 			<div>
 				<head>
 				    <title>Simple Map</title>
@@ -51,11 +52,11 @@ function Zip(props) {
 				    <meta charset="utf-8">
 				    <style>
 				      /* Always set the map height explicitly to define the size of the div
-				       * element that contains the map. */
+				       * element that contains the map. *//*
 				      #map {
 				        height: 100%;
 				      }
-				      /* Optional: Makes the sample page fill the window. */
+				      /* Optional: Makes the sample page fill the window. *//*
 				      html, body {
 				        height: 100%;
 				        margin: 0;
@@ -78,7 +79,7 @@ function Zip(props) {
 				    async defer></script>
 				  </body>
 			</div>
-	            
+	        */
 	    </div>
     );
 }
