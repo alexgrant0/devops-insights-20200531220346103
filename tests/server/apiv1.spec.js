@@ -75,6 +75,7 @@ describe('Get Weather', function() {
   */
  
   it('with valid city name', function() {
+  	console.log("START OF THE BROKEN TEST");
     reqMock = {
       query: {
         city: 'Auckland'
