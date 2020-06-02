@@ -73,6 +73,7 @@ describe('Get Weather', function() {
     assert(resMock.send.lastCall.args[0].msg === 'Failed', 'Unexpected response:' + resMock.send.lastCall.args);
   });
   */
+ /*
   it('with valid city name', function() {
     reqMock = {
       query: {
@@ -97,5 +98,6 @@ describe('Get Weather', function() {
     assert(resMock.send.lastCall.args[0].city === 'Auckland', 'Unexpected response:' + resMock.send.lastCall.args[0].city);
     //assert(resMock.send.lastCall.args[0].weather === 'Conditions are light rain and temperature is 15.48 C', 'Unexpected response:' + resMock.send.lastCall.args[0].weather);
   });
+  */
   
 });
