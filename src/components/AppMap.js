@@ -4,8 +4,7 @@ function AppMap() {
 
     return (
 	    <div>
-	    	TESTING 123
-	      <embed type="text/html" src="../../public/map.html" width="100%" height="500"/>
+	      <iframe src="map.html" width="100%" height="500"></iframe>
 	    </div> 
     );
     
