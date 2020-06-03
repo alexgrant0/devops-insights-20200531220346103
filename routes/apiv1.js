@@ -21,7 +21,7 @@ exports.getWeather = function(req, res) {
 		method: 'GET',
         url: aurl,
   		json: true
-    }, function(err, resp, body) {
+    }, function(err, body) {
     	if(err) {
     		res.status(400).send('Failed to get the data');
     		console.error("Failed to send request to openweathermap.org", err);
