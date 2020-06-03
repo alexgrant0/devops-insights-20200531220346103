@@ -43,7 +43,7 @@ function Zip(props) {
 	            <div className="pl-3 row">
 	                <div className="text-danger small"> { validationError } </div>
 	            </div>
-	            <iframe src="Map.html" width="500" height="300"></iframe>
+	            <object data="Map.html" width="500" height="300"></object>
 	        </div>
     );
 }
