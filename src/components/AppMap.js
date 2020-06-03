@@ -4,7 +4,26 @@ function AppMap() {
 
     return (
 	    <div>
-	      <object type="text/html" data="map.html" ></object>
+	      <head>
+			  <meta charset="UTF-8">
+			  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+			  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+			  <title>Google Map</title>
+			  <style>
+			    #map{
+			      height:700px;
+			      width:100%;
+			  }
+			  </style>
+			</head>
+			<body>
+			
+			  <div id = "map"></div>
+			  <script type="text/javascript" src="map.js"></script>
+			  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbZSDbWTExhP6Ojrqi08miAFk4Bh_51C0&callback=initMap" async defer></script>
+			
+			
+			</body>
 	    </div> 
     );
     
