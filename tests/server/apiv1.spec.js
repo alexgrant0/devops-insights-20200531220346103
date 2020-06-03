@@ -1,6 +1,5 @@
 const requireHelper = require('./requireHelper');
 const apiv1 = requireHelper.require('routes/apiv1');
-const AppContainer = requireHelper.require('src/containers/AppContainer');
 const assert = require('chai').assert;
 const sinon = require('sinon');
 
