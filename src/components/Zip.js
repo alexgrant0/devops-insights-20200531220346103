@@ -43,44 +43,6 @@ function Zip(props) {
 	            <div className="pl-3 row">
 	                <div className="text-danger small"> { validationError } </div>
 	            </div>
-	            <div>
-				    <style>
-				      /* Always set the map height explicitly to define the size of the div
-				       * element that contains the map. */
-				      #map {
-				        height: 100%;
-				      }
-				      /* Optional: Makes the sample page fill the window. */
-				      html, body {
-				        height: 100%;
-				        margin: 0;
-				        padding: 0;
-				      }
-				    </style>
-				    <div id="map"></div>
-				    <script>
-				      var map;
-				      function initMap() {
-				        map = new google.maps.Map(document.getElementById('map'), {
-				          center: {lat: -34.397, lng: 150.644},
-				          zoom: 8
-				        });
-				        
-				        function addMarker(props){
-				        	var marker = new google.maps.Marker({
-				        		position: props.coords,
-				        		map: map        		
-				        	})
-				        }
-				        
-				        google.maps.event.addListener(map, 'click', function(event){
-				        	addMarker({coords:event.latLng})
-				        })
-				      }
-				    </script>
-				    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
-				    async defer></script>
-				</div>
 	            //<iframe src="Map.html" width="500" height="300"></iframe>
 	            //<embed type="text/html" src="Map.html" width="500" height="200"/>
 	        </div>
