@@ -4,7 +4,7 @@ function AppMap() {
 
     return (
 	    <div>
-	      <embed type="text/html" src="map.html" width="100%" height="500"/>
+	      <object type="text/html" data="map.html" ></object>
 	    </div> 
     );
     
