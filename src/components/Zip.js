@@ -18,32 +18,40 @@ function Zip(props) {
     
     
     return (
-    	
-        <div className="col-sm-4">
-            <div className="row">
-                <div className="col-sm-10">
-                    <style jsx="true">{`
-                        .form-control::-webkit-input-placeholder {
-                            color: #ddd;
-                        }
-                    `}
-                    </style>
-                    <input 
-                        type="text" 
-                        className="form-control" 
-                        id="usr" 
-                        placeholder="NZ City Name"
-                        onKeyPress={(event) => {
-                            if (event.key === "Enter") {
-                                validate(event);
-                            }
-                        }}
-                    ></input>   
-                </div>
-            </div>
-            <div className="pl-3 row">
-                <div className="text-danger small"> { validationError } </div>
-            </div>
+    	<div>
+	    	<script src="http://www.w3schools.com/lib/w3data.js"></script>
+	        <div className="col-sm-4">
+	            <div className="row">
+	                <div className="col-sm-10">
+	                    <style jsx="true">{`
+	                        .form-control::-webkit-input-placeholder {
+	                            color: #ddd;
+	                        }
+	                    `}
+	                    </style>
+	                    <input 
+	                        type="text" 
+	                        className="form-control" 
+	                        id="usr" 
+	                        placeholder="NZ City Name"
+	                        onKeyPress={(event) => {
+	                            if (event.key === "Enter") {
+	                                validate(event);
+	                            }
+	                        }}
+	                    ></input>   
+	                </div>
+	            </div>
+	            <div className="pl-3 row">
+	                <div className="text-danger small"> { validationError } </div>
+	            </div>
+	            
+	            <div w3-include-html="Map.html"></div> 
+	
+				<script>
+				w3IncludeHTML();
+				</script>
+	        </div>
         </div>
     );
 }
