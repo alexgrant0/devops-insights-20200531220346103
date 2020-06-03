@@ -8,7 +8,6 @@ function initMap(){
   google.maps.event.addListener(map, 'click', function(event){
     addMarker({coords:event.latLng});
     var clickedLocation = event.latLng;
-    //clickedlocation is long and lati
   });
 
 
