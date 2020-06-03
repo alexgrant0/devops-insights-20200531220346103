@@ -1,7 +1,7 @@
 function initMap(){
   var options = {
     zoom: 7,
-    center:{lat:-36.8485,lng:174.7633}
+    center:{lat:-37.78333,lng:175.28333}
   }
   var map = new google.maps.Map(document.getElementById('map'), options);
 
@@ -10,11 +10,19 @@ function initMap(){
     var clickedLocation = event.latLng;
   });
 
+	var marker;
 
   function addMarker(props){
-    var marker = new google.maps.Marker({
-      position:props.coords,
-      map:map
-    });
+    
+    if (!marker || !marker.setPosition) {
+	    marker = new google.maps.Marker({
+	      position:props.coords,
+	      map:map
+	    });
+	} else {
+		marker.setPosition(location);
+	}
+
   }
 }
+
