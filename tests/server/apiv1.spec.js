@@ -52,7 +52,7 @@ describe('Get Weather', function() {
     assert(resMock.status.lastCall.calledWith(400), 'Unexpected response:' + resMock.status.lastCall.args);
     assert(resMock.send.lastCall.calledWith('Failed to get the data'), 'Unexpected response:' + resMock.send.lastCall.args);
   });
-  /*
+  
   it('with incomplete city name', function() {
     reqMock = {
       query: {
@@ -68,13 +68,12 @@ describe('Get Weather', function() {
 
     apiv1.getWeather(reqMock, resMock);
 
-    //assert(resMock.status.lastCall.calledWith(404), 'Unexpected response:' + resMock.status.lastCall.args);
+    assert(resMock.status.lastCall.calledWith(404), 'Unexpected response:' + resMock.status.lastCall.args);
     assert(resMock.send.lastCall.args[0].msg === 'city not found', 'Unexpected response:' + resMock.send.lastCall.args);
   });
-  */
+  
   /*
   it('with valid city name', function() {
-  	console.log("START OF THE BROKEN TEST");
     reqMock = {
       query: {
         city: 'Auckland'
@@ -93,8 +92,6 @@ describe('Get Weather', function() {
     apiv1.__set__("request", request);
 	
     apiv1.getWeather(reqMock, resMock);
-    
-    AppContainer.handleZipChange();
     
     assert(resMock.status.lastCall.calledWith(200), 'Unexpected response:' + resMock.status.lastCall.args);
     assert(resMock.send.lastCall.args[0].city === 'Auckland', 'Unexpected response:' + resMock.send.lastCall.args[0].city);
