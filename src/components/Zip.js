@@ -44,17 +44,6 @@ function Zip(props) {
             <div className="pl-3 row">
                 <div className="text-danger small"> { validationError } </div>
             </div>
-            <div id='map'></div>
-            <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
-            <script>
-            mapboxgl.accessToken = 'pk.eyJ1IjoiZXF1aW5uMTAiLCJhIjoiY2lxdjFpa3M1MDBlY2Zzbmh3Mjk1MTl1NSJ9.JJwjExkgWnX3QUNiN8c_9Q';
-			var map = new mapboxgl.Map({
-								  container: 'map', // HTML container id
-								  style: 'mapbox://styles/mapbox/streets-v9', // style URL
-								  center: [-21.9270884, 64.1436456], // starting position as [lng, lat]
-								  zoom: 13
-								});
-            </script>
         </div>
     );
 }
