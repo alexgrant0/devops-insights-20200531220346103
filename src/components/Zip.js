@@ -18,7 +18,6 @@ function Zip(props) {
     
     
     return (
-    	<div>
 	        <div className="col-sm-4">
 	            <div className="row">
 	                <div className="col-sm-10">
@@ -44,9 +43,9 @@ function Zip(props) {
 	            <div className="pl-3 row">
 	                <div className="text-danger small"> { validationError } </div>
 	            </div>
-	            <embed type="text/html" src="Map.html" width="500" height="200">
+	            <iframe src="/Map.html" width="500" height="300"></iframe>
+	            //<embed type="text/html" src="Map.html" width="500" height="200">
 	        </div>
-        </div>
     );
 }
 
