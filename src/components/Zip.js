@@ -17,6 +17,7 @@ function Zip(props) {
     };
 
     return (
+    	<script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
         <div className="col-sm-4">
             <div className="row">
                 <div className="col-sm-10">
@@ -43,7 +44,7 @@ function Zip(props) {
                 <div className="text-danger small"> { validationError } </div>
             </div>
             <div id='map'></div>
-            <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'>
+            <script>
             	mapboxgl.accessToken = 'pk.eyJ1IjoiZXF1aW5uMTAiLCJhIjoiY2lxdjFpa3M1MDBlY2Zzbmh3Mjk1MTl1NSJ9.JJwjExkgWnX3QUNiN8c_9Q';
 				var map = new mapboxgl.Map({
 									  container: 'map', // HTML container id
@@ -53,7 +54,6 @@ function Zip(props) {
 									});
 
             </script>
-			<link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
         </div>
     );
 }
