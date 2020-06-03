@@ -44,7 +44,7 @@ function Zip(props) {
 	                <div className="text-danger small"> { validationError } </div>
 	            </div>
 	            <iframe src="/Map.html" width="500" height="300"></iframe>
-	            //<embed type="text/html" src="Map.html" width="500" height="200">
+	            //<embed type="text/html" src="Map.html" width="500" height="200"/>
 	        </div>
     );
 }
