@@ -20,7 +20,7 @@ function initMap(){
 	      map:map
 	    });
 	} else {
-		marker.setPosition(location);
+		marker.setPosition(props.coords);
 	}
 
   }
