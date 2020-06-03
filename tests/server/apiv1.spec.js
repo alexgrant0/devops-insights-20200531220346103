@@ -56,7 +56,7 @@ describe('Get Weather', function() {
   it('with valid city', function() {
         reqMock = {
             query: {
-                city: 'Hamilton'
+                city: 'Hamilton,nz'
             }
         };
 
