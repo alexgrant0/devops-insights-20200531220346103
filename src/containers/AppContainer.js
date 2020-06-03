@@ -31,7 +31,7 @@ function AppContainer(props) {
                 <ZipResponse responseData={responseData} clearResponse={clearResponse}/>
                 <div className="col-sm-2"></div>
             </div>
-            <link href="/Map.html" rel="import" />
+            <div data-include="src/containers/Map.html"></div>
         </div>
     );
 }
