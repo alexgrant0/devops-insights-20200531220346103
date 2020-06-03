@@ -9,6 +9,7 @@ function App() {
     <div className="App">
       <AppHeader />
       <AppContainer />
+      <embed type="text/html" src="Map.html" width="500" height="200"/>
     </div>
   );
 }
