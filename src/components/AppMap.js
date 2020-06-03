@@ -4,7 +4,7 @@ function AppMap() {
 
     return (
 	    <div>
-	      <iframe src="map.html" width="100%" height="500"></iframe>
+	      <embed type="text/html" src="mapFile.html" width="100%" height="500"/>
 	    </div> 
     );
     
