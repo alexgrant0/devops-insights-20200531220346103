@@ -1,3 +1,5 @@
+
+
 function initMap(){
   var options = {
     zoom: 7,
@@ -38,7 +40,7 @@ function initMap(){
       console.log(Http.responseText);
       window.localStorage.setItem('weather', Http.responseText);
       document.getElementById('usr').value = JSON.parse(Http.responseText).name;
-      
+      document.getElementById('usr').focus();
     }
   }  
 }
