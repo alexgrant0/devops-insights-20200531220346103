@@ -7,9 +7,10 @@ function initMap(){
 
   google.maps.event.addListener(map, 'click', function(event){
     addMarker({coords:event.latLng});
-    var latitude = event.latLng.lat();
-    var longitude = event.latLng.lng();
-    getInformation(latitude, longitude);
+    var myLatLng = event.latLng;
+    var lat = myLatLng.lat();
+    var lng = myLatLng.lng();
+    getInformation(lat, lng);
   })  
 	
 	var marker;
@@ -28,12 +29,15 @@ function initMap(){
   
   function getInformation(lat, long){
   	const Http = new XMLHttpRequest();
-	const url='https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric&lat=${lat}&lon=${long}';
+	const url='https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric&lat=' + lat + '&lon=' + long;
 	Http.open("GET", url);
 	Http.send();
 	
 	Http.onreadystatechange = (e) => {
-	  console.log(Http.responseText)
+		console.log(url);
+		console.log("Lat: " + lat);
+		console.log("Long: " + long);
+	  console.log(Http.responseText);
 	}
   }
   
