@@ -13,7 +13,7 @@ function AppContainer(props) {
         const json = await res.json()
         //console.log(json);
         setResponseData(json);
-        window.localStorage.setItem('weather', JSON.stringify(json));
+        await window.localStorage.setItem('weather', JSON.stringify(json));
 
     }
 
