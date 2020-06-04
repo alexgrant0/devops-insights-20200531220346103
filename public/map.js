@@ -1,3 +1,5 @@
+import ZipResponse from '../src/components/ZipResponse';
+
 function initMap(){
   var options = {
     zoom: 7,
@@ -34,10 +36,7 @@ function initMap(){
 	Http.send();
 	
 	Http.onreadystatechange = (e) => {
-		console.log(url);
-		console.log("Lat: " + lat);
-		console.log("Long: " + long);
-	  console.log(Http.responseText);
+	  ZipResponse(Http.responseText);
 	}
   }
   
