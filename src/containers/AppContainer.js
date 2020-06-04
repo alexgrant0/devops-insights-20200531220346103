@@ -13,6 +13,8 @@ function AppContainer(props) {
         const json = await res.json()
         //console.log(json);
         setResponseData(json);
+        window.localStorage.setItem('weather', JSON.stringify(json));
+
     }
 
     const clearResponse = () => {
@@ -23,12 +25,12 @@ function AppContainer(props) {
         <div>
             <div className="row mt-4">
                 <div className="col-sm-4"></div>
-                <Zip onZipChange={handleZipChange} clearResponse={clearResponse}/>
+                <Zip onZipChange={JSON.parse(window.localStorage.getItem('weather'));} clearResponse={clearResponse}/>
                 <div className="col-sm-4"></div>
             </div>
             <div className="row mt-4">
                 <div className="col-sm-2"></div>
-                <ZipResponse responseData={responseData} clearResponse={clearResponse}/>
+                <ZipResponse responseData={JSON.parse(window.localStorage.getItem('weather'));} clearResponse={clearResponse}/>
                 <div className="col-sm-2"></div>
             </div>
         </div>
