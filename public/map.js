@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import ZipResponse from '../src/components/ZipResponse';
 
 function initMap(){
@@ -30,13 +31,26 @@ function initMap(){
   }
   
   function getInformation(lat, long){
+  	const [responseData, setResponseData] = useState('');
+  	const clearResponse = () => {
+        setResponseData('');
+    }
+  	
   	const Http = new XMLHttpRequest();
 	const url='https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric&lat=' + lat + '&lon=' + long;
 	Http.open("GET", url);
 	Http.send();
 	
 	Http.onreadystatechange = (e) => {
-	  ZipResponse(Http.responseText);
+		console.log(Http.responseText);
+		setResponseData(JSON.parse(Http.responseText);
+		return (
+            <div className="row mt-4">
+                <div className="col-sm-2"></div>
+                <ZipResponse responseData={responseData} clearResponse={clearResponse}/>
+                <div className="col-sm-2"></div>
+            </div>
+    	);
 	}
   }
   
