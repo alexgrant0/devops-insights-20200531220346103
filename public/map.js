@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import AppContainer from '../src/containers/AppContainer';
 
 function initMap(){
   var options = {
@@ -13,9 +12,25 @@ function initMap(){
     var latitude = event.latLng.lat();
     var longitude = event.latLng.lng();
     getCoordsData(latitude, longitude);
-  });
-  
-  function getCoordsData(lat, lng){
+  })  
+	
+	var marker;
+
+  function addMarker(props){
+    
+    if (!marker || !marker.setPosition) {
+	    marker = new google.maps.Marker({
+	      position:props.coords,
+	      map:map
+	    });
+	} else {
+		marker.setPosition(props.coords);
+	}
+
+  }
+}
+
+function getCoordsData(lat, lng){
   	
   	const [responseData, setResponseData] = useState('');
   	
@@ -38,22 +53,4 @@ function initMap(){
             <div className="col-sm-2"></div>
         </div>
     )
-  }
-  
-
-	var marker;
-
-  function addMarker(props){
-    
-    if (!marker || !marker.setPosition) {
-	    marker = new google.maps.Marker({
-	      position:props.coords,
-	      map:map
-	    });
-	} else {
-		marker.setPosition(props.coords);
-	}
-
-  }
 }
-
