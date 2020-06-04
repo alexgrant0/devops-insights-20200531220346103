@@ -13,6 +13,7 @@ function AppContainer(props) {
         const json = await res.json()
         //console.log(json);
         setResponseData(json);
+        console.log("IN HANDLEZIPCHANGE FUNCTION");
         await window.localStorage.setItem('weather', JSON.stringify(json));
 
     }
