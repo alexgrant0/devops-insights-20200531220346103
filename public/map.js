@@ -35,7 +35,6 @@ function initMap(){
     Http.send();
 	
     Http.onreadystatechange = (e) => {
-      console.log(Http.responseText);
       window.localStorage.setItem('weather', Http.responseText);
       document.getElementById('usr').value = JSON.parse(Http.responseText).name;
       document.getElementById('usr').focus();
