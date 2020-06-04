@@ -23,20 +23,22 @@ function initMap(){
 	      map:map
 	    });
 	} else {
-		marker.setPosition(props.coords);
-	}
+		  marker.setPosition(props.coords);
+	  }
   }
   
   function getInformation(lat, long){
   	
   	const Http = new XMLHttpRequest();
-	const url='https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric&lat=' + lat + '&lon=' + long;
-	Http.open("GET", url);
-	Http.send();
+    const url='https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric&lat=' + lat + '&lon=' + long;
+    Http.open("GET", url);
+    Http.send();
 	
-	Http.onreadystatechange = (e) => {
-		console.log(Http.responseText);
-		window.localStorage.setItem('weather', Http.responseText);		
-	}
+    Http.onreadystatechange = (e) => {
+      console.log(Http.responseText);
+      window.localStorage.setItem('weather', Http.responseText);
+      document.getElementById('usr').value = JSON.parse(Http.responseText).name;
+      
+    }
   }  
 }

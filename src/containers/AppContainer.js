@@ -8,14 +8,16 @@ function AppContainer(props) {
     const [responseData, setResponseData] = useState('');
 
     const handleZipChange = async (cityName) => {
+        console.log("TEST 1");
         //console.log(`--------- fetchData called zip:${zipValue}`)
         const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric&q=${cityName},nz`)
+        console.log("TEST 2");
         const json = await res.json()
+        console.log("TEST 3");
+        window.localStorage.setItem('weather', JSON.stringify(json));
+        console.log("TEST 4");
         //console.log(json);
         setResponseData(json);
-        console.log("IN HANDLEZIPCHANGE FUNCTION");
-        await window.localStorage.setItem('weather', JSON.stringify(json));
-
     }
 
     const clearResponse = () => {
