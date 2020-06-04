@@ -9,6 +9,7 @@ function initMap(){
     addMarker({coords:event.latLng});
     var latitude = event.latLng.lat();
     var longitude = event.latLng.lng();
+    getInformation(latitude, longitude);
   })  
 	
 	var marker;
@@ -24,4 +25,17 @@ function initMap(){
 		marker.setPosition(props.coords);
 	}
   }
+  
+  function getInformation(lat, long){
+  	const Http = new XMLHttpRequest();
+	const url='https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric&lat=${lat}&lon=${long}';
+	Http.open("GET", url);
+	Http.send();
+	
+	Http.onreadystatechange = (e) => {
+	  console.log(Http.responseText)
+	}
+  }
+  
+  
 }
