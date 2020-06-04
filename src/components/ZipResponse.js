@@ -2,9 +2,6 @@ import React from 'react';
 
 function ZipResponse(props) {
 
-    console.log(props.responseData);
-    console.log(props.responseData.cod);
-
     if(props.responseData === null || props.responseData === '') {
         return null;
     }
