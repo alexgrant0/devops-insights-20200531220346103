@@ -38,43 +38,6 @@ function initMap(){
 		console.log(Http.responseText);
 		window.localStorage.setItem('weather', Http.responseText);		
 	}
-	
-	return (
-            <div className="col-sm-8">
-                <table className="table table-info table-hover">
-                    <tbody>
-                        <tr>
-                            <td>City</td>
-                            <td>{Http.responseText.name}</td>
-                        </tr>
-                        <tr>
-                            <td>Temperature</td>
-                            <td>{Http.responseText.main.temp}</td>
-                        </tr>
-                        <tr>
-                            <td>Pressure</td>
-                            <td>{Http.responseText.main.pressure}</td>
-                        </tr>
-                        <tr>
-                            <td>Humidity</td>
-                            <td>{Http.responseText.main.humidity}</td>
-                        </tr>
-                        <tr>
-                            <td>Temperature (Min)</td>
-                            <td>{Http.responseText.main.temp_min}</td>
-                        </tr>
-                        <tr>
-                            <td>Temperature (Max)</td>
-                            <td>{Http.responseText.main.temp_max}</td>
-                        </tr>
-                        <tr>
-                            <td>Conditions</td>
-                            <td>{Http.responseText.weather[0].description}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-	)
   }
   
   
