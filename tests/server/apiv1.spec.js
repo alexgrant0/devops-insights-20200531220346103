@@ -55,35 +55,16 @@ describe('Get Weather', function() {
   
   /*
   it('with valid city', function() {
-        reqMock = {
-            query: {
-                city: 'Hamilton'
-            }
-        };
+    const Http = new XMLHttpRequest();
+    const url='https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric&q=Hamilton,nz';
+    Http.open("GET", url);
+    Http.send();
 
-        const body = {
-            cod: 200,
-            name: 'Hamilton',
-            weather: [{
-                main: 'cold'
-            }],
-            main: {
-                temp: 78
-            }
-        };
+    var json = JSON.parse(Http.responseText);
 
-        const request = function(obj, callback) {
-            callback(null, null, body);
-        };
-
-        apiv1.__set__("request", request);
-
-        apiv1.getWeather(reqMock, resMock);
-
-        assert(resMock.status.lastCall.calledWith(200), 'Unexpected response:' + resMock.status.lastCall.args);
-        assert(resMock.send.lastCall.args[0].city === 'Hamilton', 'Unexpected response:' + resMock.send.lastCall.args[0].city);
-        assert(resMock.send.lastCall.args[0].weather === 'Conditions are cold and temperature is 78 C', 'Unexpected response:' + resMock.send.lastCall.args[0].weather);
-    });
+    assert(json.responseData.cod == 200, 'Unexpected response:' + resMock.status.lastCall.args);
+    //assert(resMock.send.lastCall.args[0].city === 'Hamilton', 'Unexpected response:' + resMock.send.lastCall.args[0].city);
+  });
     */
   /*
   it('with incomplete city name', function() {

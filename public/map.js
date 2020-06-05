@@ -1,9 +1,52 @@
+var express = require('express');
+var mysql = require('mysql');
+var app = express();
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+var weatherData;
+
+var connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password:'',
+  database:'CityDB'
+});
+
+connection.connect(function(error) {
+  if(!!error){
+    console.log('error');
+  }
+  else{
+    console.log('connected');
+  }
+})
+app.get('/', function(req, resp){
+
+  connection.query("SELECT * FROM cityTable", function(error, rows, fields) {
+    if(!!error){
+      console.log('Error in the query');
+
+    }
+    else{
+        console.log('Success');
+        if(rows[0] !== undefined){
+          var long = rows[0].lng;
+          var lat = rows[0].lat;
+        }
+        
+    }
+  })
+
+})
+app.listen(1337);
+
 function initMap(){
   var options = {
     zoom: 7,
     center:{lat:-37.78333,lng:175.28333}
   }
   var map = new google.maps.Map(document.getElementById('map'), options);
+  console.log(weatherData);
+  window.localStorage.setItem('weather', weatherData);
 
   google.maps.event.addListener(map, 'click', function(event){
     addMarker({coords:event.latLng});
@@ -42,43 +85,4 @@ function initMap(){
   }  
 }
 
-var express = require('express');
-var mysql = require('mysql');
-var app = express();
 
-
-var connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password:'',
-  database:'googlemap'
-});
-
-connection.connect(function(error) {
-  if(!!error){
-    console.log('error');
-  }
-  else{
-    console.log('connected');
-  }
-})
-app.get('/', function(req, resp){
-
-  connection.query("SELECT * FROM googlemaptable", function(error, rows, fields) {
-    if(!!error){
-      console.log('Error in the query');
-
-    }
-    else{
-      console.log('Success');
-      console.log(rows[0].Lng);
-      var tempLng = rows[0].Lng;
-      var tempLat = rows[0].Lat;
-      localStorage.setItem('tempLng', rows[0].Lng);
-      localStorage.setItem('tempLat', rows[0].Lat);
-      console.log(rows[0].Lat);
-    }
-  })
-
-})
-app.listen(1337);

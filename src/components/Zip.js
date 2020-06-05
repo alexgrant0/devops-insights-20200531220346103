@@ -12,7 +12,7 @@ function Zip(props) {
             props.clearResponse();
         } else {
             setValidationError('');
-            props.onZipChange(event.target.value);
+			props.onZipChange(event.target.value);
         }
     };
     
